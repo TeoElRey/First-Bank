@@ -51,29 +51,23 @@ public class Bank {
     }
     public static void setPIN() {
         System.out.println("New PIN: ");
-        int newPIN = reader.nextInt();
-        PIN = newPIN;
+        PIN = reader.nextInt();
         showMenu();
     }
     public static int getPIN() { return PIN; }
     public static void setName() {
         System.out.println("New Name: ");
-        String newName = reader.nextLine();
-        name = newName;
+        name = reader.nextLine();
         showMenu();
     }
     public static double getMoney() { return money; }
-    public static boolean checkPIN() {
+    public static void checkPIN() {
         System.out.println("Enter PIN: ");
         int pin = reader.nextInt();
-        if(pin == PIN) {
-            return true;
-        }
-        else {
+        if(pin != PIN) {
             System.out.println("Incorrect PIN. Please try again");
             checkPIN();
         }
-        return false;
     }
     public static void init() {
         money = SaveValues.readValues()[0];
